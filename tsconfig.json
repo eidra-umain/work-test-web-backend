@@ -11,7 +11,7 @@
     "declaration": false
   },
   "include": [
-    "api/*.ts"
+    "./api/*.ts"
   ],
   "exclude": [
     "node_modules"
