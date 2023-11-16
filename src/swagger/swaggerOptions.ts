@@ -9,8 +9,9 @@ const swaggerOptions = {
       description: 'Food delivery code test API',
     },
     servers: [
-      { 
-        description: '/api/v1 - version 1',
+      {
+        url: process.env.VERCEL_URL || 'http://localhost:3000',
+        description: 'Vercel Server',
       },
     ],
   },
