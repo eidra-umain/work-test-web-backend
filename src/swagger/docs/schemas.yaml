@@ -1,0 +1,68 @@
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: boolean
+        reason:
+          type: string
+
+    Filter:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        image_url:
+          type: string
+          format: uri
+
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        rating:
+          type: number
+          minimum: 0
+          maximum: 5
+        filterIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        image_url:
+          type: string
+          format: uri
+        delivery_time_minutes:
+          type: integer
+
+    RestaurantsResponse:
+      type: object
+      properties:
+        restaurants:
+          type: array
+          items:
+            $ref: "#/components/schemas/Restaurant"
+
+    OpenStatus:
+      type: object
+      properties:
+        restaurant_id:
+          type: string
+        is_currently_open:
+          type: boolean
+
+    PriceRange:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        range:
+          type: string

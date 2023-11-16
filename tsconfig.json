@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2018", // or a version that suits your needs
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true, // to avoid checking declaration files
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // specify your preferred output directory
+    "rootDir": "./src", // specify your source code directory
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": false
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

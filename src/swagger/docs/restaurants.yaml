@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: "Restaurant API"
+  version: "1.0.0"
+paths:
+  /restaurants:
+    get:
+      summary: "Get all restaurants"
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              example:
+                restaurants:
+                  - id: "string"
+                    name: "string"
+                    rating: 4.5
+                    filterIds: ["string"]
+                    image_url: "string"
+                    delivery_time_minutes: 0
+              schema:
+                $ref: "#/components/schemas/RestaurantsResponse"
