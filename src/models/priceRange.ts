@@ -1,11 +1,13 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-export interface PriceRange {
-  id: string;
+export type PriceRange = {
+  id?: string;
   range: string;
-}
+};
 
-export function createPriceRange(range: string): PriceRange {
+export function createPriceRange(priceRange: PriceRange): PriceRange {
+  const { range } = priceRange;
+
   return {
     id: uuidv4(),
     range,

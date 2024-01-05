@@ -1,8 +1,8 @@
-import { PriceRange, createPriceRange } from '../models/priceRange';
+import { PriceRange, createPriceRange } from "../models/priceRange";
 
 export const mockPriceRangeData: PriceRange[] = [
-    createPriceRange('$'),
-    createPriceRange('$$'),
-    createPriceRange('$$$'),
-    createPriceRange('$$$$'),
-  ];
+  createPriceRange({ range: "$" }),
+  createPriceRange({ range: "$$" }),
+  createPriceRange({ range: "$$$" }),
+  createPriceRange({ range: "$$$$" }),
+];

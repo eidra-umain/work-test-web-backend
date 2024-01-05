@@ -1,27 +1,26 @@
-import express, { Request, Response } from 'express';
-import { OpenStatus } from '../models/openStatus';
-import { getOpenStatusByRestaurantId, getAllOpenStatus } from '../services/OpenStatusService';
+import express, { Request, Response } from "express";
+import { OpenStatus } from "../models/openStatus";
+import { getOpenStatusByRestaurantId, getAllOpenStatus } from "../services/OpenStatusService";
 
 const router = express.Router();
 
 // Get all open statuses
-router.get('/', (req: Request, res: Response) => {
+router.get("/", (req: Request, res: Response) => {
   const allOpenStatus: OpenStatus[] = getAllOpenStatus();
 
   res.json(allOpenStatus);
 });
 
 // Get open status by restaurant ID
-router.get('/:id', (req: Request, res: Response) => {
+router.get("/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   const openStatus: OpenStatus | undefined = getOpenStatusByRestaurantId(id);
 
   if (openStatus) {
     res.json(openStatus);
   } else {
-    res.status(404).json({ error: true, reason: 'Open status not found' });
+    res.status(404).json({ error: true, reason: "Open status not found" });
   }
 });
-
 
 export default router;

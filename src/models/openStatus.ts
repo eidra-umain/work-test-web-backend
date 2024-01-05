@@ -1,12 +1,13 @@
 export interface OpenStatus {
-    restaurant_id: string;
-    is_open: boolean;
-  }
+  restaurant_id: string;
+  is_open: boolean;
+}
 
-  export function createOpenStatus(restaurant_id: string, is_open: boolean): OpenStatus {
-    return {
-      restaurant_id,
-      is_open,
-    }
-  }
-  
+export function createOpenStatus(openStatus: OpenStatus): OpenStatus {
+  const { restaurant_id, is_open } = openStatus;
+
+  return {
+    restaurant_id,
+    is_open,
+  };
+}
