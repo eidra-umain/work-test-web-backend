@@ -46,3 +46,12 @@ paths:
                 delivery_time_minutes: "number"
               schema:
                 $ref: "#/components/schemas/RestaurantsResponse"
+        "404":
+          description: "Could not find restaurant"
+          content:
+            application/json:
+              example:
+                error: true
+                reason: "string"
+              schema:
+                $ref: "#/components/schemas/Error"
