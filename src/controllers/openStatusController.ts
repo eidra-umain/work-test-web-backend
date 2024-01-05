@@ -1,15 +1,8 @@
 import express, { Request, Response } from "express";
 import { OpenStatus } from "../models/openStatus";
-import { getOpenStatusByRestaurantId, getAllOpenStatus } from "../services/OpenStatusService";
+import { getOpenStatusByRestaurantId } from "../services/OpenStatusService";
 
 const router = express.Router();
-
-// Get all open statuses
-router.get("/", (req: Request, res: Response) => {
-  const allOpenStatus: OpenStatus[] = getAllOpenStatus();
-
-  res.json(allOpenStatus);
-});
 
 // Get open status by restaurant ID
 router.get("/:id", (req: Request, res: Response) => {
