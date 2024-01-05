@@ -1,14 +1,14 @@
-import { Restaurant } from "../models/restaurant";
-import { mockRestaurantData } from "../data/restaurant";
+import { Restaurant } from '../models/restaurant'
+import { mockRestaurantData } from '../data/restaurant'
 
 export function getAllRestaurants(): Restaurant[] {
-  return mockRestaurantData;
+  return mockRestaurantData
 }
 
 export function getRestaurantById(id: string): Restaurant | undefined {
-  return mockRestaurantData.find((restaurant) => restaurant.id === id);
+  return mockRestaurantData.find((restaurant) => restaurant.id === id)
 }
 
 export function getRestaurantByName(name: string): Restaurant | undefined {
-  return mockRestaurantData.find((restaurant) => restaurant.name === name);
+  return mockRestaurantData.find((restaurant) => restaurant.name === name)
 }

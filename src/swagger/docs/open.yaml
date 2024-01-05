@@ -1,35 +1,35 @@
 openapi: 3.0.0
 info:
-  title: "Open Status API"
-  version: "1.0.0"
+  title: 'Open Status API'
+  version: '1.0.0'
 paths:
   /open/{id}:
     get:
-      summary: "Get open status of a restaurant"
+      summary: 'Get open status of a restaurant'
       parameters:
         - in: path
           name: id
           required: true
-          description: "ID of restaurant"
+          description: 'ID of restaurant'
           schema:
             type: string
             format: uuid
       responses:
-        "200":
-          description: "OK"
+        '200':
+          description: 'OK'
           content:
             application/json:
               example:
-                restaurant_id: "string"
-                is_currently_open: "boolean"
+                restaurant_id: 'string'
+                is_currently_open: 'boolean'
               schema:
-                $ref: "#/components/schemas/OpenStatus"
-        "404":
-          description: "Could not find restaurant"
+                $ref: '#/components/schemas/OpenStatus'
+        '404':
+          description: 'Could not find restaurant'
           content:
             application/json:
               example:
                 error: true
-                reason: "Restaurant not found"
+                reason: 'Restaurant not found'
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'

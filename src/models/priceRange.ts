@@ -1,13 +1,13 @@
 export type PriceRange = {
-  id: string;
-  range: string;
-};
+  id: string
+  range: string
+}
 
 export function createPriceRange(priceRange: PriceRange): PriceRange {
-  const { id, range } = priceRange;
+  const { id, range } = priceRange
 
   return {
     id,
     range,
-  };
+  }
 }
