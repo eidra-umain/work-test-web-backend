@@ -1,4 +1,4 @@
-import { Filter, createFilter } from '../models/filter'
+import { Filter, createFilter } from '../models/filter';
 
 export const mockFilterData: Filter[] = [
   createFilter({
@@ -29,4 +29,4 @@ export const mockFilterData: Filter[] = [
     name: 'Breakfast',
     image_url: 'https://i.imgur.com/AevtNco.png',
   }),
-]
+];

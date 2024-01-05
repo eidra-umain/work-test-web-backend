@@ -1,8 +1,8 @@
-import { OpenStatus } from '../models/openStatus'
-import { mockOpenStatusData } from '../data/openStatus'
+import { OpenStatus } from '../models/openStatus';
+import { mockOpenStatusData } from '../data/openStatus';
 
 export function getAllOpenStatus(): OpenStatus[] {
-  return mockOpenStatusData
+  return mockOpenStatusData;
 }
 
 export function getOpenStatusByRestaurantId(
@@ -10,5 +10,5 @@ export function getOpenStatusByRestaurantId(
 ): OpenStatus | undefined {
   return mockOpenStatusData.find(
     (status) => status.restaurant_id === restaurantId
-  )
+  );
 }

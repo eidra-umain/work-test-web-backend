@@ -1,6 +1,6 @@
-import { Restaurant, createRestaurant } from '../models/restaurant'
-import { getFilterIdByName } from '../services/FilterService'
-import { getPriceRangeIdByRange } from '../services/PriceRangeService'
+import { Restaurant, createRestaurant } from '../models/restaurant';
+import { getFilterIdByName } from '../services/FilterService';
+import { getPriceRangeIdByRange } from '../services/PriceRangeService';
 
 export const mockRestaurantData: Restaurant[] = [
   createRestaurant({
@@ -59,4 +59,4 @@ export const mockRestaurantData: Restaurant[] = [
     delivery_time_minutes: 60,
     price_range_id: getPriceRangeIdByRange('$$$'),
   }),
-]
+];

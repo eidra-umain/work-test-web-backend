@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'path';
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -21,6 +21,6 @@ const swaggerOptions = {
     path.resolve(__dirname, './docs/open.yaml'),
     path.resolve(__dirname, './docs/price_range.yaml'),
   ],
-}
+};
 
-export default swaggerOptions
+export default swaggerOptions;

@@ -1,6 +1,6 @@
-import { OpenStatus, createOpenStatus } from '../models/openStatus'
-import { getRestaurantByName } from '../services/RestaurantService'
-import { mockRestaurantData } from './restaurant'
+import { OpenStatus, createOpenStatus } from '../models/openStatus';
+import { getRestaurantByName } from '../services/RestaurantService';
+import { mockRestaurantData } from './restaurant';
 
 export const mockOpenStatusData: OpenStatus[] = [
   createOpenStatus({
@@ -31,4 +31,4 @@ export const mockOpenStatusData: OpenStatus[] = [
     restaurant_id: getRestaurantByName(mockRestaurantData[6].name)?.id,
     is_open: false,
   }),
-]
+];
