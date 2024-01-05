@@ -1,11 +1,62 @@
 import { Restaurant, createRestaurant } from '../models/restaurant';
+import { getFilterIdByName } from '../services/FilterService';
+import { getPriceRangeIdByRange } from '../services/PriceRangeService';
 
 export const mockRestaurantData: Restaurant[] = [
-  createRestaurant('Waynes Coffee', 4.5, ['Coffee'], 'https://i.imgur.com/W4d883v.png', 30),
-  createRestaurant('Oskars Tacos', 3.8, ['Taco´s'], 'https://i.imgur.com/tH0EvOh.png', 45),
-  createRestaurant('Dawids Deli', 4.9, ['Fries', 'Burrito'], 'https://i.imgur.com/uqgCi8Y.png', 60),
-  createRestaurant('Viktors Valmofrön & Potatis', 4.2, ['Pizza', 'Fries'], 'https://i.imgur.com/uqgCi8Y.png', 30),
-  createRestaurant('Sebbes Slizes', 4.3, ['Pizza',], 'https://i.imgur.com/bobBnmk.png', 45),
-  createRestaurant('Karls Korv (vegan)', 4.4, ['Breakfast'], 'https://i.imgur.com/AevtNco.png', 20),
-  createRestaurant('Emils Elit-biffar', 4.5, ['Hamburger'], 'https://i.imgur.com/m3vGiUZ.png', 60),
+  createRestaurant({
+    name: 'Waynes Coffee',
+    rating: 4.5,
+    filter_ids: [getFilterIdByName('Coffee')],
+    image_url: '/images/coffee.png',
+    delivery_time_minutes: 30,
+    price_range_id: getPriceRangeIdByRange('$'),
+  }),
+  createRestaurant({
+    name: 'Oskars Tacos',
+    rating: 3.8,
+    filter_ids: [getFilterIdByName('Taco´s')],
+    image_url: '/images/taco.png',
+    delivery_time_minutes: 45,
+    price_range_id: getPriceRangeIdByRange('$$'),
+  }),
+  createRestaurant({
+    name: 'Dawids Deli',
+    rating: 4.9,
+    filter_ids: [getFilterIdByName('Fries'), getFilterIdByName('Burrito')],
+    image_url: '/images/fries.png',
+    delivery_time_minutes: 60,
+    price_range_id: getPriceRangeIdByRange('$$$'),
+  }),
+  createRestaurant({
+    name: 'Viktors Valmofrön & Potatis',
+    rating: 4.2,
+    filter_ids: [getFilterIdByName('Pizza'), getFilterIdByName('Fries')],
+    image_url: '/images/pizza.png',
+    delivery_time_minutes: 30,
+    price_range_id: getPriceRangeIdByRange('$$'),
+  }),
+  createRestaurant({
+    name: 'Sebbes Slizes',
+    rating: 4.3,
+    filter_ids: [getFilterIdByName('Pizza')],
+    image_url: '/images/pizza.png',
+    delivery_time_minutes: 45,
+    price_range_id: getPriceRangeIdByRange('$'),
+  }),
+  createRestaurant({
+    name: 'Karls Korv (vegan)',
+    rating: 4.4,
+    filter_ids: [getFilterIdByName('Breakfast')],
+    image_url: '/images/breakfast.png',
+    delivery_time_minutes: 20,
+    price_range_id: getPriceRangeIdByRange('$$$$'),
+  }),
+  createRestaurant({
+    name: 'Emils Elit-biffar',
+    rating: 4.5,
+    filter_ids: [getFilterIdByName('Hamburger')],
+    image_url: '/images/hamburger.png',
+    delivery_time_minutes: 60,
+    price_range_id: getPriceRangeIdByRange('$$$'),
+  }),
 ];

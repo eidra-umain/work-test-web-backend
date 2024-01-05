@@ -1,23 +1,59 @@
 openapi: 3.0.0
 info:
-  title: "Restaurant API"
-  version: "1.0.0"
+  title: 'Restaurant API'
+  version: '1.0.0'
 paths:
   /restaurants:
     get:
-      summary: "Get all restaurants"
+      summary: 'Get all restaurants'
       responses:
         '200':
-          description: "OK"
+          description: 'OK'
           content:
             application/json:
               example:
                 restaurants:
-                  - id: "string"
-                    name: "string"
-                    rating: 4.5
-                    filterIds: ["string"]
-                    image_url: "string"
-                    delivery_time_minutes: 0
+                  - id: 'string'
+                    name: 'string'
+                    rating: 'number'
+                    filter_ids: ['string']
+                    image_url: 'string'
+                    delivery_time_minutes: 'number'
+                    price_range_id: 'string'
               schema:
-                $ref: "#/components/schemas/RestaurantsResponse"
+                $ref: '#/components/schemas/RestaurantsResponse'
+  /restaurants/{id}:
+    get:
+      summary: 'Get a restaurant'
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: 'ID of restaurant'
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              example:
+                id: 'string'
+                name: 'string'
+                rating: 'number'
+                filter_ids: ['string']
+                image_url: 'string'
+                delivery_time_minutes: 'number'
+                price_range_id: 'string'
+              schema:
+                $ref: '#/components/schemas/RestaurantsResponse'
+        '404':
+          description: 'Could not find restaurant'
+          content:
+            application/json:
+              example:
+                error: true
+                reason: 'string'
+              schema:
+                $ref: '#/components/schemas/Error'

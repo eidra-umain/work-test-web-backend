@@ -1,6 +1,9 @@
 import express, { Request, Response } from 'express';
 import { Restaurant } from '../models/restaurant';
-import { getAllRestaurants, getRestaurantById }from '../services/RestaurantService';
+import {
+  getAllRestaurants,
+  getRestaurantById,
+} from '../services/RestaurantService';
 
 const router = express.Router();
 

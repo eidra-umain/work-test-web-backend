@@ -1,38 +1,38 @@
 openapi: 3.0.0
 info:
-  title: "Price Range API"
-  version: "1.0.0"
+  title: 'Price Range API'
+  version: '1.0.0'
 paths:
   /price-range/{id}:
     get:
-      summary: "Get price range by ID"
+      summary: 'Get price range by ID'
       parameters:
         - in: path
           name: id
           required: true
-          description: "ID of price range"
+          description: 'ID of price range'
           schema:
             type: string
             format: uuid
       responses:
         '200':
-          description: "OK"
+          description: 'OK'
           content:
             application/json:
               example:
-                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-                range: "string"
+                id: 'string'
+                range: 'string'
               schema:
-                $ref: "#/components/schemas/PriceRange"
+                $ref: '#/components/schemas/PriceRange'
         '404':
-          description: "Could not find price range"
+          description: 'Could not find price range'
           content:
             application/json:
               example:
                 error: true
-                reason: "Price range not found"
+                reason: 'Price range not found'
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
 components:
   schemas:

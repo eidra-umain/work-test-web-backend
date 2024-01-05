@@ -1,4 +1,3 @@
-
 import express from 'express';
 import restaurantController from '../controllers/restaurantController';
 import openStatusController from '../controllers/openStatusController';

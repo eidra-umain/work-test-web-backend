@@ -1,39 +1,54 @@
 openapi: 3.0.0
 info:
-  title: "Filter API"
-  version: "1.0.0"
+  title: 'Filter API'
+  version: '1.0.0'
 paths:
+  /filter:
+    get:
+      summary: 'Get all filters'
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              example:
+                filters:
+                  - id: 'string'
+                    name: 'string'
+                    image_url: 'string'
+              schema:
+                $ref: '#/components/schemas/Filter'
   /filter/{id}:
     get:
-      summary: "Get a filter"
+      summary: 'Get a filter'
       parameters:
         - in: path
           name: id
           required: true
-          description: "ID of filter"
+          description: 'ID of filter'
           schema:
             type: string
             format: uuid
       responses:
         '200':
-          description: "OK"
+          description: 'OK'
           content:
             application/json:
               example:
-                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-                name: "string"
-                image_url: "string"
+                id: 'string'
+                name: 'string'
+                image_url: 'string'
               schema:
-                $ref: "#/components/schemas/Filter"
+                $ref: '#/components/schemas/Filter'
         '404':
-          description: "Could not find filter"
+          description: 'Could not find filter'
           content:
             application/json:
               example:
                 error: true
-                reason: "string"
+                reason: 'string'
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
 components:
   schemas:

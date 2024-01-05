@@ -48,7 +48,7 @@ components:
         restaurants:
           type: array
           items:
-            $ref: "#/components/schemas/Restaurant"
+            $ref: '#/components/schemas/Restaurant'
 
     OpenStatus:
       type: object

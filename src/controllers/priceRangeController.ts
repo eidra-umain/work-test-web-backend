@@ -1,6 +1,9 @@
 import express, { Request, Response } from 'express';
 import { PriceRange } from '../models/priceRange';
-import { getAllPriceRanges, getPriceRangeById} from '../services/PriceRangeService';
+import {
+  getAllPriceRanges,
+  getPriceRangeById,
+} from '../services/PriceRangeService';
 
 const router = express.Router();
 
