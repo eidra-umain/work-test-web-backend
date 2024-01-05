@@ -7,7 +7,7 @@ paths:
     get:
       summary: "Get all restaurants"
       responses:
-        '200':
+        "200":
           description: "OK"
           content:
             application/json:
@@ -15,9 +15,34 @@ paths:
                 restaurants:
                   - id: "string"
                     name: "string"
-                    rating: 4.5
+                    rating: "number"
                     filterIds: ["string"]
                     image_url: "string"
-                    delivery_time_minutes: 0
+                    delivery_time_minutes: "number"
+              schema:
+                $ref: "#/components/schemas/RestaurantsResponse"
+  /restaurants/{id}:
+    get:
+      summary: "Get a restaurant"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: "ID of restaurant"
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              example:
+                id: "string"
+                name: "string"
+                rating: "number"
+                filterIds: ["string"]
+                image_url: "string"
+                delivery_time_minutes: "number"
               schema:
                 $ref: "#/components/schemas/RestaurantsResponse"
