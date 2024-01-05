@@ -8,3 +8,7 @@ export function getAllRestaurants(): Restaurant[] {
 export function getRestaurantById(id: string): Restaurant | undefined {
   return mockRestaurantData.find((restaurant) => restaurant.id === id);
 }
+
+export function getRestaurantByName(name: string): Restaurant | undefined {
+  return mockRestaurantData.find((restaurant) => restaurant.name === name);
+}

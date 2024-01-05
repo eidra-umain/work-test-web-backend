@@ -15,16 +15,16 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: "OK"
           content:
             application/json:
               example:
-                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                id: "string"
                 range: "string"
               schema:
                 $ref: "#/components/schemas/PriceRange"
-        '404':
+        "404":
           description: "Could not find price range"
           content:
             application/json:

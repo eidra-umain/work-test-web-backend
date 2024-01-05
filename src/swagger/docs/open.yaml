@@ -15,16 +15,16 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: "OK"
           content:
             application/json:
               example:
                 restaurant_id: "string"
-                is_currently_open: true
+                is_currently_open: "boolean"
               schema:
                 $ref: "#/components/schemas/OpenStatus"
-        '404':
+        "404":
           description: "Could not find restaurant"
           content:
             application/json:

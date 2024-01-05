@@ -4,20 +4,22 @@ export type Restaurant = {
   id?: string;
   name: string;
   rating: number;
-  filterIds: (string | undefined)[];
+  filter_ids: (string | undefined)[];
   image_url: string;
   delivery_time_minutes: number;
+  price_range_id: string;
 };
 
 export function createRestaurant(restaurant: Restaurant): Restaurant {
-  const { name, rating, filterIds, image_url, delivery_time_minutes } = restaurant;
+  const { name, rating, filter_ids, image_url, delivery_time_minutes, price_range_id } = restaurant;
 
   return {
     id: uuidv4(),
     name,
     rating,
-    filterIds,
+    filter_ids,
     image_url,
     delivery_time_minutes,
+    price_range_id,
   };
 }

@@ -3,6 +3,21 @@ info:
   title: "Filter API"
   version: "1.0.0"
 paths:
+  /filter:
+    get:
+      summary: "Get all filters"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              example:
+                filters:
+                  - id: "string"
+                    name: "string"
+                    image_url: "string"
+              schema:
+                $ref: "#/components/schemas/Filter"
   /filter/{id}:
     get:
       summary: "Get a filter"
