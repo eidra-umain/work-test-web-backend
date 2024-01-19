@@ -3,11 +3,16 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import swaggerOptions from './swagger/swaggerOptions';
 import routes from './routes/routes';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 80;
 
-app.use(express.static('public'));
+if (process.env.NODE_ENV == 'development') {
+  app.use(express.static('public'));
+}
 
 app.use('/api', routes);
 
