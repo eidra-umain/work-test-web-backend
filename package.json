@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/app.ts",
-    "build": "tsc && node dist/app.js"
+    "dev": "ts-node src/app.ts",
+    "start": "node dist/app.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
