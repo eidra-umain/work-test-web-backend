@@ -19,3 +19,9 @@ $ npm run dev
 ```bash
 $ npm run build && npm run start
 ```
+
+## Deployment
+
+Code is hosted on umain-code-test GCP project
+
+### Building for deployment

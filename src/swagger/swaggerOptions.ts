@@ -1,6 +1,7 @@
 import path from 'path';
+import { SwaggerOptions } from 'swagger-ui-express';
 
-const swaggerOptions = {
+const swaggerOptions: SwaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
@@ -8,11 +9,6 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'Food delivery code test API',
     },
-    servers: [
-      {
-        url: 'http://localhost:3000/api',
-      },
-    ],
   },
   apis: [
     path.resolve(__dirname, './docs/schemas.yaml'),
