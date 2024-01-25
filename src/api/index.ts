@@ -6,13 +6,13 @@ import routes from '../routes/routes';
 
 const app = express();
 
-if (process.env.NODE_ENV == 'development') {
-  app.use(express.static('public'));
-}
+app.use(express.static('public'));
 
 app.use('/api', routes);
 
 const specs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+app.use('/', (req, res) => res.send('hello'));
 
 export default app;
