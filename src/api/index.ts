@@ -10,12 +10,17 @@ app.use(express.static('public'));
 
 app.use('/api', routes);
 
-// Function to get the base URL
-const getBaseUrl = (req: any) => `${req.protocol}://${req.get('host')}/api`;
+const getBaseUrl = (req: any) => {
+  const proto = req.get('X-Forwarded-Proto') || req.protocol;
+  const host = req.get('X-Forwarded-Host') || req.get('host');
+  return `${proto}://${host}`;
+};
 
 app.use('/api-docs', (req, res, next) => {
   // Set the server URL dynamically
-  swaggerOptions.swaggerDefinition.servers = [{ url: getBaseUrl(req) }];
+  swaggerOptions.swaggerDefinition.servers = [
+    { url: `${getBaseUrl(req)}/api` },
+  ];
 
   // Setup Swagger middleware
   const swaggerSpec = swaggerJsdoc(swaggerOptions);

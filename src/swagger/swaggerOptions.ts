@@ -11,11 +11,11 @@ const swaggerOptions: SwaggerOptions = {
     },
   },
   apis: [
-    path.resolve(__dirname, './docs/schemas.yaml'),
-    path.resolve(__dirname, './docs/restaurants.yaml'),
-    path.resolve(__dirname, './docs/filters.yaml'),
-    path.resolve(__dirname, './docs/open.yaml'),
-    path.resolve(__dirname, './docs/price_range.yaml'),
+    path.resolve(__dirname, '../../docs/schemas.yaml'),
+    path.resolve(__dirname, '../../docs/restaurants.yaml'),
+    path.resolve(__dirname, '../../docs/filters.yaml'),
+    path.resolve(__dirname, '../../docs/open.yaml'),
+    path.resolve(__dirname, '../../docs/price_range.yaml'),
   ],
 };
 
