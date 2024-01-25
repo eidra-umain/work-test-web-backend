@@ -10,6 +10,6 @@
     "isolatedModules": true,
     "declaration": false
   },
-  "include": ["src/**/*.ts", "pages/api/index.ts"],
+  "include": ["src/**/*.ts", "src/api/index.ts"],
   "exclude": ["node_modules"]
 }

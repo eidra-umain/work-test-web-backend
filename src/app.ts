@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
-import app from '../pages/api';
+import app from './api';
 
 dotenv.config();
 
-const PORT = process.env.PORT ?? 80;
+const PORT = process.env.PORT ?? 8000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
