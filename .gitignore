@@ -8,8 +8,6 @@
 
 # testing
 /coverage
-
-/vercel.json
 # next.js
 /.next/
 /out/
