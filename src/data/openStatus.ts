@@ -29,6 +29,6 @@ export const mockOpenStatusData: OpenStatus[] = [
   }),
   createOpenStatus({
     restaurant_id: getRestaurantByName(mockRestaurantData[6].name)?.id,
-    is_open: false,
+    is_open: true,
   }),
 ];
