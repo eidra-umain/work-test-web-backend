@@ -3,11 +3,12 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import swaggerOptions from '../swagger/swaggerOptions';
 import routes from '../routes/routes';
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.static('public'));
-
+app.use(cors());
 app.use('/api', routes);
 
 const getBaseUrl = (req: any) => {
