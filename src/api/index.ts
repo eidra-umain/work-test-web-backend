@@ -7,8 +7,18 @@ import cors from 'cors';
 
 const app = express();
 
+app.use(
+  cors({
+    origin: '*',
+    allowedHeaders: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
+
 app.use(express.static('public'));
-app.use(cors());
+
 app.use('/api', routes);
 
 const getBaseUrl = (req: any) => {
